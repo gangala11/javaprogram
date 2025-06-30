@@ -148,7 +148,7 @@ package com.expensestracker;
 	    }
 
 	    static void viewSummary(Connection conn) throws SQLException {
-	        String sql = "SELECT type, SUM(amount) AS total FROM expenses WHERE user_id = ? GROUP BY type";
+	        String sql = "SELECT type, SUM(amount) AS total FROM expenses1 WHERE user_id = ? GROUP BY type";
 	        PreparedStatement ps = conn.prepareStatement(sql);
 	        ps.setInt(1, currentUserId);
 	        ResultSet rs = ps.executeQuery();
